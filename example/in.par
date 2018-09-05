@@ -4,7 +4,7 @@ ny = 200
 xmin = .1
 xmax = 10.0
 
-# Potential Parameters
+# Integrator Parameters
 CTU = Yes
 PLM = No
 
