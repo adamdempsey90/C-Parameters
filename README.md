@@ -20,10 +20,29 @@ To run it execute,
 cd examples/
 python ../c-parameters.py
 sh build.sh
+./test
 ```
 and you should see the output,
 ```
-Testing
+Testing,
+	nx = 100
+	ny = 200
+	xmin = 0.1
+	xmax = 10
+	ctu = Yes
+	plm = No
+	outputname = example.bin
+
+```
+
+You can also overwrite values in the parameter file on the command line when you execute the binary.
+For example, running,
+```
+./test "nx=300"
+```
+Produces,
+```
+Testing,
 	nx = 100
 	ny = 200
 	xmin = 0.1
@@ -32,12 +51,14 @@ Testing
 	plm = No
 	outputname = example.bin
 Redefined on the command line:
-nx = 100
+	nx = 300
+nx = 300
 ny = 200
 xmin = 0.1
 xmax = 10
 CTU = Yes
 PLM = No
+outputname = example.bin
 ```
 
 This will generate the files par.h and read_pars.c which you can then include in your project. 
