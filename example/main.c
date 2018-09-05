@@ -1,5 +1,6 @@
 #include "defs.h"
 int main(int argc, char *argv[]) {
+    printf("Testing,\n");
     Parameters *p = (Parameters *)malloc(sizeof(Parameters));
     read_param_file("in.par",argc,argv,p);
 

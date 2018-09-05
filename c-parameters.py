@@ -153,8 +153,8 @@ void read_param_file(char *fname, int argc, char *argv[], Parameters *params) {
         }
     }
 
-    printf("Redefined on the command line:\n");
     if (argc > 0) {
+        printf("Redefined on the command line:\n");
         parse_argument(argc,argv,params);
     }
 
