@@ -1,0 +1,12 @@
+# Grid Parameters
+nx = 100
+ny = 200
+xmin = .1
+xmax = 10.0
+
+# Potential Parameters
+CTU = Yes
+PLM = No
+
+# Output file
+outputname = example.bin
