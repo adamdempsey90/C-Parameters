@@ -66,29 +66,25 @@ def create_par_file(lines,fname):
 void set_var(char *name,int int_val, double double_val, int bool_val, char *str_val, Parameters *params) {
 """
 
-    int_blocks =[]
-    bool_blocks=[]
-    float_blocks=[]
-    str_blocks = []
+
+    blocks = []
     for i,line in enumerate(lines):
         key,val = line
         key = key.lower()
         t = determine_type(val)
         kargs = {'first': i==0}
         if t is int:
-            int_blocks.append(create_int_block(key,**kargs))
+            blocks.append(create_int_block(key,**kargs))
         elif t is bool:
-            bool_blocks.append(create_bool_block(key,**kargs))
+            blocks.append(create_bool_block(key,**kargs))
         elif t is float:
-            float_blocks.append(create_float_block(key,**kargs))
+            blocks.append(create_float_block(key,**kargs))
         elif t is str:
-            str_blocks.append(create_string_block(key,**kargs))
+            blocks.append(create_string_block(key,**kargs))
         else:
             print('{} has no type! Given type '.format(key),t)
-    output += '\n'.join(int_blocks)
-    output += '\n'.join(float_blocks)
-    output += '\n'.join(bool_blocks)
-    output += '\n'.join(str_blocks)
+
+    output += '\n'.join(blocks)
     output += '\nreturn;\n}\n'
 
     output += r"""
